@@ -1,12 +1,15 @@
 import "./App.css";
 import Header from "./components/Header";
-import ThreadList from "./components/ThreadListContainer";
+import AppRoutes from "./routes/AppRoutes";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header />
-      <ThreadList />
+      <BrowserRouter>
+        <Header />
+        <AppRoutes />
+      </BrowserRouter>
     </>
   );
 }
