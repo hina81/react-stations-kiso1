@@ -1,7 +1,14 @@
 import "./App.css";
+import Header from "./components/Header";
+import ThreadList from "./components/ThreadListContainer";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Header />
+      <ThreadList />
+    </>
+  );
 }
 
 export default App;
