@@ -5,7 +5,9 @@ const usePost = () => {
   const [title, setTitle] = useState("");
   const navigate = useNavigate();
 
-  async function postData() {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
       const response = await fetch(
         "https://railway.bulletinboard.techtrain.dev/threads",
@@ -22,17 +24,12 @@ const usePost = () => {
 
       const result = await response.json();
       console.log("投稿成功:", result);
+      // ルートページに遷移
+      navigate("/");
     } catch (error) {
       console.error("投稿失敗:", error);
     }
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    postData();
-    // ルートページに遷移
-    navigate("/");
-  }
+  };
 
   return { title, setTitle, handleSubmit };
 };
