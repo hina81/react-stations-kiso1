@@ -1,7 +1,7 @@
 import useThreadDetail from "../hooks/useThreadDetail";
 import PostNotFound from "./PostNotFound";
-const ThreadReplies = ({ threads_id }) => {
-  const { threadDetail } = useThreadDetail(threads_id);
+const ThreadReplies = ({ threads_id, threadDetail }) => {
+  // const { threadDetail } = useThreadDetail(threads_id);
   console.log(threadDetail);
   return (
     <div className="space-y-2">

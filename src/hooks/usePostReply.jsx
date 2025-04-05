@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const usePostReply = (threads_id) => {
+const usePostReply = (threads_id, refetch) => {
   const [reply, setReply] = useState("");
 
   const handleSubmit = async (e) => {
@@ -23,6 +23,7 @@ const usePostReply = (threads_id) => {
       const result = await response.json();
       console.log("投稿成功:", result);
       setReply("");
+      refetch();
     } catch (error) {
       console.error("投稿失敗:", error);
     }

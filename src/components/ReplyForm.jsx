@@ -1,7 +1,7 @@
 import usePostReply from "../hooks/usePostReply";
 
-const ReplyForm = ({ threads_id }) => {
-  const { reply, setReply, handleSubmit } = usePostReply(threads_id);
+const ReplyForm = ({ threads_id, refetch }) => {
+  const { reply, setReply, handleSubmit } = usePostReply(threads_id, refetch);
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
