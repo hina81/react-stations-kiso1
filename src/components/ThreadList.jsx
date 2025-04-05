@@ -1,19 +1,17 @@
-import { useState, createContext, useContext } from "react";
 import { useThreads } from "../hooks/useThreads";
 import { Link } from "react-router-dom";
-import PostNotFound from "./PostNotFound";
+import { useTitle } from "../contexts/TitleContext";
 
 const ThreadList = () => {
   const { threads } = useThreads();
-  // const [title, setTitle] = useState("");
-  // const titleContext = createContext("");
+  const { setTitle } = useTitle();
 
   return (
     <div className="space-y-2">
       {threads.map((thread) => (
         <Link
           to={`/threads/${thread.id}`}
-          // onClick={() => setTitle(thread.title)}
+          onClick={() => setTitle(thread.title)}
           key={thread.id}
         >
           <div className="p-4 bg-white shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition cursor-pointer">
